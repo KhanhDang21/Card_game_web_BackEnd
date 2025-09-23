@@ -25,7 +25,6 @@ public class User {
     @Column(nullable = true)
     private int total_quit_game;
 
-
     public String getUsername() {
         return username;
     }
