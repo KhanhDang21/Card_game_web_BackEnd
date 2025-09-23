@@ -1,4 +1,4 @@
-package com.card_game_web;
+package com.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

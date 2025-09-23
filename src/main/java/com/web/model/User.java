@@ -1,4 +1,4 @@
-package com.card_game_web.model;
+package com.web.model;
 
 
 import jakarta.persistence.*;
@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
 
