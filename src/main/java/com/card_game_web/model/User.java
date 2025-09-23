@@ -10,6 +10,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+
     @Column(unique = true, nullable = false)
     private String username;
 
@@ -21,6 +22,7 @@ public class User {
 
     @Column(nullable = true)
     private int total_score;
+
 
     @Column(nullable = true)
     private int total_quit_game;
