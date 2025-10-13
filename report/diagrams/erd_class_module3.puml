@@ -1,0 +1,46 @@
+@startuml
+title ERD/Class – Module 3
+
+class User {
+  id: int
+  username: varchar
+  password: varchar
+  status: int
+  total_score: int
+  total_quit_game: int
+}
+
+class Mode {
+  id: int
+  name: varchar
+}
+
+class Card {
+  id: int
+  name: varchar
+  data_image: blob
+}
+
+class CardSet {
+  id: int
+}
+
+class GameBoard {
+  id: int
+  start_time: datetime
+  end_time: datetime
+}
+
+class UserGameBoard {
+  id: int
+  score: int
+}
+
+Mode "1" -- "*" CardSet : mode_id
+Card "1" -- "*" CardSet : card_id
+CardSet "1" -- "*" GameBoard : card_set_id
+GameBoard "1" -- "*" UserGameBoard : game_board_id
+User "1" -- "*" UserGameBoard : user_id
+
+@enduml
+

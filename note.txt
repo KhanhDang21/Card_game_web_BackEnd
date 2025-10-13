@@ -1,0 +1,23 @@
+Game lật bài tìm cặp
+
+- Hệ thống có một server và nhiều client. Server lưu toàn bộ thông tin và dữ liệu.
+
+- Để chơi, người chơi phải login vào tài khoản của mình từ một máy client. Sau khi login thành công, giao diện hiện lên một danh sách các người chơi đang online. Mỗi người chơi có các thông tin: tên, tổng điểm thành tích của người chơi, trạng thái (hoặc đang bận nếu đang chơi với người khác, hoặc đang rảnh nếu không chơi với ai) được sắp xếp theo tổng điểm thành tích từ cao xuống thấp. Và nút xem bảng xếp hạng, khi click xem bảng xếp hạng ta sẽ thấy giao diện tất cả người chơi trong server có các thông tin: tên, tổng điểm thành tích, trạng thái được sắp xếp theo tổng điểm thành tích từ cao xuống thấp.
+
+- Muốn mời (thách đấu) ai thì người chơi click vào tên của đối thủ đó trong danh sách online. Nếu người chơi đó ở trạng thái đang rảnh mới có thể thách đấu được, còn nếu ở trạng thái “đang bận” thì không thể thách đấu và giao diện sẽ hiện lên dòng thông báo “người chơi đang bận chưa thể thách đấu lúc này”.
+
+- Khi thách đấu, giao diện người thách đấu sẽ hiện ra các chế độ chơi (dễ, trung bình, khó), người thách đấu sẽ chọn chế độ mà mình muốn thách đấu. Giao diện người bị thách đấu có thể chấp nhận (Ok) hoặc từ chối (Reject).
+
+- Khi chấp nhận, 2 người chơi sẽ vào phòng đấu với. Giao diện chơi của hai người chơi sẽ là giống nhau, bao gồm độc lập loạt các lá bài (các thứ tự và vị trí của các lá bài đều giống nhau với hai người chơi) được úp xuống (tùy theo chế độ chơi đã chọn mà số lượng các lá bài sẽ khác nhau), hiển thị điểm số của bản thân, đối thủ và nút: thoát.
+
+- Khi ván chơi bắt đầu 2 đối thủ sẽ chơi bằng cách click vào một trong những lá bài đang được úp dưới sàn. Sau khi click lá bài sẽ ngửa lên và hiển thị hình ảnh lá bài đó. Nếu lần ngửa bài tiếp theo lá bài đó có hình ảnh hiển thị giống với lần trước đó thì người chơi sẽ được cộng điểm vào điểm cá nhân của ván chơi này (cộng 20 điểm với mỗi cặp tìm được), còn nếu như lá bài này không trùng với lá bài trước đó thì hai lá bài này sẽ bị úp xuống trở lại. Cứ thế thao tác này lặp lại cho đến khi một trong hai người tìm được tất cả các cặp lá bài. Hai người chơi có thể trực tiếp theo dõi điểm của đối thủ trong khi đang chơi.
+
+- Nếu người chơi nào thoát trận đấu giữa chừng, hệ thống sẽ hỏi lại nếu người chơi xác nhận thoát thì người chơi đó sẽ bị xử thua ngay lập tức và trận đấu kết thúc (nếu thoát thi đấu giữa chừng quá 3 lần hệ thống sẽ vô hiệu hóa tài khoản).
+
+- Người chơi nào lật được hết toàn bộ các cặp lá bài nhanh nhất là người chiến thắng hoặc khi thời gian của ván đấu (5 phút) chạy hết hệ thống sẽ so sánh điểm để xét người thắng. Hệ thống sẽ hiện ra thông báo ai là người chiến thắng. Khi
+
+trận đấu kết thúc thì người thắng sẽ được cộng số điểm mà mình hơn người thua vào tổng điểm thành tích của bản thân. Nếu ván đấu nào có người thoát giữa chừng thì người thắng sẽ được cộng vào tổng điểm thành tích của bản thân (mặc định là 200 điểm) để tránh gian lận điểm thành tích.
+
+- Sau mỗi ván chơi giao diện sẽ hiện ra hai nút là: chơi tiếp, kết thúc. Nếu cả 2 người chơi đều chọn chơi tiếp thì một ván mới sẽ được tạo ra. Nếu một trong hai người chơi chọn kết thúc thì người chơi đó sẽ thoát ra giao diện chính và ván chơi sẽ kết thúc. Khi người chơi ấn chơi tiếp hoặc kết thúc thì hệ thống đều sẽ thông báo cho người kia biết rằng đối thủ muốn chơi tiếp hoặc đối thủ đã kết thúc ván đấu. Nếu trường hợp thoát giữa chừng thì giao diện này sẽ không hiện ra mà người chơi sẽ được đưa thằng về giao diện chính.
+
+- Kết quả trận đấu sẽ được lưu vào server. Mỗi người chơi đều có thể xem lại lịch sử đấu của chính mình.

@@ -1,6 +1,7 @@
 package com.web.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -22,6 +23,7 @@ public class User {
     String username;
 
     @Column(nullable = false)
+    @JsonIgnore
     String password;
 
     @Column(nullable = true)

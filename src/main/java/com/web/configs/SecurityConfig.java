@@ -18,7 +18,7 @@ import org.springframework.web.cors.CorsConfiguration;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final String[] PUBLIC_ENDPOINTS = {"/users", "/auth/log-in", "/auth/introspect", "/auth/logout", "/auth/refresh"};
+    private final String[] PUBLIC_ENDPOINTS = {"/users", "/auth/log-in", "/auth/introspect", "/auth/logout", "/auth/refresh", "/game/create", "/modes", "/cards", "/card-sets"};
 
     @Autowired
     private CustomJwtDecoder customJwtDecoder;

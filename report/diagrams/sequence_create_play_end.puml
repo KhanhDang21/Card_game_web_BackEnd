@@ -1,0 +1,32 @@
+@startuml
+title Sequence – Create, Play (score), End
+
+actor PlayerA
+actor PlayerB
+participant Client
+participant Server
+database DB
+
+PlayerA -> Client: Start match with B
+Client -> Server: POST /game/create (modeId, userAId, userBId)
+Server -> DB: insert game_board, user_game_board(2)
+DB --> Server: ids
+Server --> Client: gameBoardId
+
+... During play ...
+PlayerA -> Client: matched pair
+Client -> Server: POST /game/{id}/score (userId=A, delta=20)
+Server -> DB: update user_game_board score
+DB --> Server: ok
+Server --> Client: ok
+
+... End ...
+PlayerB -> Client: end game
+Client -> Server: POST /game/{id}/end
+Server -> DB: set end_time
+Server -> DB: add each user_game_board.score to user.total_score
+DB --> Server: ok
+Server --> Client: ok
+
+@enduml
+

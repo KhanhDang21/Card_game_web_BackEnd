@@ -1,0 +1,26 @@
+@startuml
+title Use Case – Module 3 (Two-Player Match)
+
+actor PlayerA as A
+actor PlayerB as B
+rectangle Server {
+  usecase UC_Create as "Tạo ván"
+  usecase UC_Score as "Cập nhật/ Theo dõi điểm"
+  usecase UC_Quit as "Thoát ván"
+  usecase UC_End as "Kết thúc ván"
+  usecase UC_Replay as "Chơi lại"
+}
+
+A --> UC_Create
+B --> UC_Create
+A --> UC_Score
+B --> UC_Score
+A --> UC_Quit
+B --> UC_Quit
+A --> UC_End
+B --> UC_End
+A --> UC_Replay
+B --> UC_Replay
+
+@enduml
+
